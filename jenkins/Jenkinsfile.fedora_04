@@ -2,11 +2,12 @@ node {
 
   agent any
 
-  stage('Building image') {
-        sh 'echo  "Hello docker build"  '
-  }
-      
-
-
+    stage('Build') {
+        sh 'echo "Hello World"'
+        sh '''
+            echo "Multiline shell steps works too"
+            ls -lah
+        '''
+    }
 
 }
