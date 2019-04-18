@@ -7,45 +7,54 @@ node {
   agent any
 
   stages {
-      
-    stage('Cloning Git') {
-      steps {
-        git 'https://github.com/jeffcarvalhoyahoo/docker.git'
-      }
-    }  
-      
     stage('Building image') {
       steps{
         echo "Hello docker build"
-        sh  "ls -l"
-    
-        sh  " docker build -t fedora_i  fedora "
-        
-      }
+       }
     }
-          
-    stage('Stop running Docker image') {
-      steps{
-        echo "Stop running Docker"
-        sh  "ls -l"
-       
-        sh  "ls -l"
-        sh  " docker ps -a "
-        sh  " docker stop fedora_basic; docker rm fedora_basic"
-        
-      }
-    }
-    
-     stage('Start  Docker image') {
-      steps{
-        echo "Start running Docker"
-        sh  "ls -l"
-        sh  "docker ps -a"
-        sh  "docker images  | grep fedora "
-        sh  "docker run  -d  --name fedora_basic fedora_i  "
-        
-      }
-    }
+      
+//
+//    stage('Cloning Git') {
+//      steps {
+//        git 'https://github.com/jeffcarvalhoyahoo/docker.git'
+//      }
+//    }  
+//      
+//    stage('Building image') {
+//      steps{
+//        echo "Hello docker build"
+//        sh  "ls -l"
+//    
+//        sh  " docker build -t fedora_i  fedora "
+//        
+//      }
+//    }
+//          
+//    stage('Stop running Docker image') {
+//      steps{
+//        echo "Stop running Docker"
+//        sh  "ls -l"
+//       
+//        sh  "ls -l"
+//        sh  " docker ps -a "
+//        sh  " docker stop fedora_basic; docker rm fedora_basic"
+//        
+//      }
+//    }
+//    
+//     stage('Start  Docker image') {
+//      steps{
+//        echo "Start running Docker"
+//        sh  "ls -l"
+//        sh  "docker ps -a"
+//        sh  "docker images  | grep fedora "
+//        sh  "docker run  -d  --name fedora_basic fedora_i  "
+//        
+//      }
+//    }
+//
+//
+
   }
 
 
