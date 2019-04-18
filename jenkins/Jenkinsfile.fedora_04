@@ -8,9 +8,7 @@ node {
 
   stages {
     stage('Building image') {
-      steps{
         echo "Hello docker build"
-       }
     }
       
 //
