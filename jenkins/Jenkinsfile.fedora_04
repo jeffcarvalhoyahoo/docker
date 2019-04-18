@@ -1,14 +1,10 @@
 node {
 
-  environment {
-    registry = "jeffcarvalho/fedora"
-    registryCredential = 'dockerhub'
-  }
   agent any
 
-    stage('Building image') {
-        echo "Hello docker build"
-    }
+  stage('Building image') {
+        sh 'echo  "Hello docker build"  '
+  }
       
 
 
