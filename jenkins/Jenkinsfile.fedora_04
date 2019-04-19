@@ -1,11 +1,15 @@
 node {
 
-    stage('Build') {
+    stage('Basic Text') {
         sh 'echo "Hello World"'
         sh '''
             echo "Multiline shell steps works too"
             ls -lah
         '''
     }
+
+    stage('Cloning Git') {
+        git 'https://github.com/jeffcarvalhoyahoo/docker.git'
+    } 
 
 }
