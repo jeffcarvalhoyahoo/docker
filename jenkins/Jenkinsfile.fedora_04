@@ -20,7 +20,9 @@ node {
         sh  "ls -l"
        
         // sh  " docker build -t  fedora\":$BUILD_NUMBER\"  fedora "
+
+        sh  "docker build -t  fedora   docker/fedora "
         
-      }
+     }
 
 }
