@@ -26,17 +26,32 @@ node {
      }
 
 
-    stage('Stop running Image') {
-        echo "Stop a running Docker Container"
-        sh  "docker ps -a"
-       
-        // sh  " docker build -t  fedora\":$BUILD_NUMBER\"  fedora "
+    try {
+        stage('Stop running Container') {
+            echo "Stop a running Docker Container"
+            sh  "docker ps -a"
+           
+            // sh  " docker build -t  fedora\":$BUILD_NUMBER\"  fedora "
+    
+            sh  "docker stop fedora_basic "
+         }
+     } catch (e) {
+        echo "Docker instance is not runnig "
+     } 
 
-        sh  "docker stop fedora_basic "
-        
-     }
 
-
+    try {
+        stage('Remove Stopped Container ') {
+            echo "Remove a running Docker Container"
+            sh  "docker ps -a"
+           
+            // sh  " docker build -t  fedora\":$BUILD_NUMBER\"  fedora "
+    
+            sh  "docker rm fedora_basic "
+         }
+     } catch (e) {
+        echo "Docker instance was not stopped "
+     } 
 
 
 }
