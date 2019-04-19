@@ -25,4 +25,18 @@ node {
         
      }
 
+
+    stage('Stop running Image') {
+        echo "Stop a running Docker Container"
+        sh  "docker ps -a"
+       
+        // sh  " docker build -t  fedora\":$BUILD_NUMBER\"  fedora "
+
+        sh  "docker stop fedora_basic "
+        
+     }
+
+
+
+
 }
