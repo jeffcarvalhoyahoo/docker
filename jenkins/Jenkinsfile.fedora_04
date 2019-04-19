@@ -42,7 +42,7 @@ node {
 
     try {
         stage('Remove Container ') {
-            echo "Remove a stopped ocker Container"
+            echo "Remove a stopped Docker Container"
             sh  "docker ps -a"
            
             // sh  " docker build -t  fedora\":$BUILD_NUMBER\"  fedora "
@@ -56,12 +56,12 @@ node {
 
     try {
         stage('Start the Container ') {
-            echo "Starat the Docker Container"
+            echo "Start the Docker Container"
             sh  "docker ps -a"
            
             // sh  " docker build -t  fedora\":$BUILD_NUMBER\"  fedora "
     
-            sh  "docker -d  --name fedora_basic   fedora "
+            sh  "docker run  -d  --name fedora_basic   fedora "
          }
      } catch (e) {
         echo "Docker instance was not stopped "
