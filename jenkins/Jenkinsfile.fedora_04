@@ -9,7 +9,10 @@ node {
     }
 
     stage('Cloning Git') {
-        git 'https://github.com/jeffcarvalhoyahoo/docker.git'
+        sh 'mkdir -p docker' 
+        dir ( "docker" ) {
+            git 'https://github.com/jeffcarvalhoyahoo/docker.git'
+        }
     } 
 
 }
